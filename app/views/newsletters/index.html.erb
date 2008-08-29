@@ -1,0 +1,25 @@
+<% @title = "Newsletter Archive" %>
+
+<p>
+  Subscribe:
+</p>
+<% form_for :address, :url => { :controller => 'addresses', :action => 'create' } do |f| %>
+E-mail:<br />
+<%= f.text_field :email %>
+<%= submit_tag 'Subscribe' %>
+<% end %>
+
+
+<p>
+  Newsletters:
+</p>
+
+<ul>
+<% @newsletters.each do |nl| %>
+  <li><strong><%= nl.subject %></strong>
+    <%=  link_to "Edit", :action => 'update', :id => nl.id %>
+    <%= link_to "Show", :action => 'show', :id => nl.id %>
+  </li>
+<% end %>
+<% will_paginate(@newsletters) %>
+</ul>

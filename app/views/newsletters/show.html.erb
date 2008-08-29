@@ -1,0 +1,14 @@
+<% @title = "Newsletter" %>
+
+<p>
+<strong>Subject:</strong> <%= @newsletter.subject -%><br/>
+</p>
+<%= @newsletter.body %>
+
+<p>
+<%= link_to "Edit", :action => 'update', :id => @newsletter.id %>
+</p>
+
+<p>
+  <%= link_to 'List', :action => 'index' %>
+</p>

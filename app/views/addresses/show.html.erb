@@ -1,0 +1,39 @@
+<% @title = "Subscribed addresses" %>
+
+<% if @addresses.empty? %>
+
+  <p>
+    No subscribed addresses yet!
+  </p>
+  
+<% else %>
+
+  <h2>Subscribed addresses:</h2>
+
+  <table class="emails">
+    <tr>
+      <th>
+        Email
+      </th>
+      <th>
+        Active?
+      </th>
+    </tr>
+
+    <% @addresses.each do |a| %>
+    <tr>
+      <td><%= a.email %></td>
+      <td><%= a.active %> </td>
+    </tr>
+  
+    <% end %>
+
+  </table>
+
+  <p>
+    <strong>
+      <%= will_paginate(@addresses) -%>
+    </strong>
+  </p>
+
+<% end %>

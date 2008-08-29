@@ -1,0 +1,6 @@
+Hi <%= @user.email  %>
+You have got new message on newsletter:
+<%= @newsletter.body %>
+
+If You want to unregister follow this link
+<%= url_for(:host => "localhost:3000", :controller => "addresses", :action => "destroy",  :email => @user.email, :secret => @user.secret, :escape => false ) %>

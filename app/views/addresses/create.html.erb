@@ -1,0 +1,15 @@
+<% @title = "Newsletter Signup" %>
+
+<% if @addresses.active? %>
+  <p>
+    Your address is already subscribed to our mailing list!
+  </p>
+  
+<% else %>
+
+  <p>
+    Thanks for having subscribed to our mailing list!  To confirm your subscription, click on the link
+    in the email we just sent to the email address you provided.
+  </p>
+
+<% end %>

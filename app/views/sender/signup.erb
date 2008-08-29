@@ -1,0 +1,2 @@
+To activate your account follow this link
+<%= url_for(:host => "localhost:3000", :controller => "addresses", :action => "confirm",  :email => @user.email, :secret => @user.secret, :escape => false ) %>

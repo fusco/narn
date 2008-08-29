@@ -1,1 +1,20 @@
-   
+NARN - Not Another Rails Newsletter
+
+Using the plugin
+
+NARN require Engines so once you‘ve installed the engines plugin, you‘ll need to add a single line to the top of config/environment.rb just below the require for Rails’ own boot.rb file:
+
+  require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
+At the end of config/environment.rb add:
+
+  gem 'mislav-will_paginate', '~> 2.2'
+  require 'will_paginate'
+    
+To generate plugin migrations and add them to main flow of database evolution you should also run:
+
+  script/generate plugin_migration
+  
+Copyright (c) 2008 Aenima, released under the MIT license
+
+While producing plugin fragments of code by David Welton were used.

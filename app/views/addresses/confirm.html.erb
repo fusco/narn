@@ -1,0 +1,14 @@
+<% @title = "Subscription confirmed" %>
+
+<% if @addresses.nil? %>
+
+  <p>
+    Can't subscribe to newsletter - link broken. Please try to resubscribe.
+  </p>
+
+<% else %>
+
+  <p>
+    <%= @addresses.email -%> has been confirmed as a subscriber.
+  </p>
+<% end %>

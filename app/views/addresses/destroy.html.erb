@@ -1,0 +1,15 @@
+<% @title = "Remove Address" %>
+
+<% if @addresses.nil? %>
+
+  <p>
+    Can't unsubscribe newsletter - link broken or already unsubscribed.
+  </p>
+  
+<% else %>
+
+  <p>
+    <%= @addresses.email %> has been removed from the list.
+  </p>
+
+<% end %>

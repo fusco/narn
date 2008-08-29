@@ -1,0 +1,24 @@
+<% @title = "Statistics" %>
+
+<table class="deliverystats">
+  <tbody>
+    <tr>
+      <th>Newsletter Subject</th>
+      <th>Started at</th>
+      <th>Number of delivered emails</th>
+      <th>Number of addresses</th>
+      <th>%</th>
+    </tr>
+
+    <% @mailings.each do |m| %>
+    <tr class="<%= cycle("even", "odd") -%>">
+      <td><%= link_to(m.newsletter.subject, :action => 'show', :id => m.newsletter.id) -%></td>
+      <td><%= m.created_at -%></td>
+      <td><%= m.delivered -%></td>
+      <td><%= m.addrcount -%></td>
+      <td><%= (m.delivered.to_f / m.addrcount) * 100 -%></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<% @title = "New Newsletter" %>
+
+<% form_for :newsletter do |f| %>
+
+  Subject:<br />
+  <%= f.text_field :subject %><br />
+  Body:<br />
+  <%= f.text_area :body %><br />
+  <%= submit_tag 'Save' %>
+
+<% end %>
