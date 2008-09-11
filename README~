@@ -1,1 +1,30 @@
+NARN - Not Another Rails Newsletter
 
+NARN is a complete and useful newsletter for your rails application. It provides you a full functionality of newnletter. User can add his address to newsletter (with account activation) or unregister. You can create and send newsletters to all singned up users.
+
+Using the plugin
+
+To install plugin run in your application directory:
+
+  ruby script/plugin install git://github.com/aenima/narn.git
+
+NARN require Engines. If you haven't got them already installed in your application they will be installed autamatically.
+
+You‘ll need to add a single line to the top of config/environment.rb just below the require for Rails’ own boot.rb file:
+
+  require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
+At the end of config/environment.rb add:
+
+  gem 'mislav-will_paginate', '~> 2.2'
+  require 'will_paginate'
+    
+To generate plugin migrations and add them to main flow of database evolution you should also run:
+
+  ruby script/generate plugin_migration
+  
+Migrate them and that's everything what you have to do to use newsletter in your application. If you have for example sendmail everything should work fine.
+  
+Copyright (c) 2008 Aenima, released under the MIT license
+
+While producing plugin fragments of code by David Welton were used.
